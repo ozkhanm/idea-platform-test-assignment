@@ -31,9 +31,9 @@ const TicketCard: React.FC<ITicketCardProps> = (props) => {
   const departureDate = new Date(departure_date);
   const arrivalDate = new Date(arrival_date);
   const formattedPrice = formatPrice(price, currency.coeff);
-  const formattedTransferMessage = `${stops} ${getCorrectSpelling(stops)}`;
-  const departureDateString = `${departureDate.getDate()} ${MONTHS[departureDate.getMonth()]} ${departureDate.getFullYear()}, ${DAYS[departureDate.getDay()]}`;
-  const arrivalDateString = `${arrivalDate.getDate()} ${MONTHS[arrivalDate.getMonth()]} ${arrivalDate.getFullYear()}, ${DAYS[arrivalDate.getDay()]}`;
+  const formattedTransferMessage = stops + " " + getCorrectSpelling(stops);
+  const departureDateString = departureDate.getDate() + " " + MONTHS[departureDate.getMonth()] + " " + departureDate.getFullYear() + ", " + DAYS[departureDate.getDay()];
+  const arrivalDateString = arrivalDate.getDate() + " " + MONTHS[arrivalDate.getMonth()] + " " + arrivalDate.getFullYear() + ", " + DAYS[arrivalDate.getDay()];
 
   return (
     <TicketCardWrapper>
