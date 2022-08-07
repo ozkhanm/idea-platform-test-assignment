@@ -17,7 +17,8 @@ import {
   DateBlock,
   DateBlockLocation,
   DateInfo,
-  TransferBlock
+  TransferBlock,
+  TicketCardCurrencyBlock
 } from "./ticket-card-styled";
 
 const TicketCard: React.FC<ITicketCardProps> = (props) => {
@@ -39,7 +40,9 @@ const TicketCard: React.FC<ITicketCardProps> = (props) => {
     <TicketCardWrapper>
       <MainInfoBlock>
         <TicketCardImage src={`//pics.avs.io/150/50/${carrier}.png`} width={150} height={50} alt={"Логотип авиакомпании"}/>
-        <TicketCardButton>Купить <br/> за {formattedPrice}{CURRENCIES_MAP[currency.type]}</TicketCardButton>
+        <TicketCardButton>Купить <br/> за {formattedPrice}
+          {CURRENCIES_MAP[currency.type] === "rub" ? <TicketCardCurrencyBlock /> : CURRENCIES_MAP[currency.type]}
+        </TicketCardButton>
       </MainInfoBlock>
       <AdditionalInfoBlock>
         <TicketTimeBlock>

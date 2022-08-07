@@ -124,3 +124,9 @@ export const TransferBlock = styled.p`
     transform: translateX(-5px);
   }
 `;
+
+export const TicketCardCurrencyBlock = styled.span`
+  &:before {
+    content: '\\20BD';
+  }
+`;
