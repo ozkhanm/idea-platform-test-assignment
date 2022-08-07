@@ -41,7 +41,7 @@ const TicketCard: React.FC<ITicketCardProps> = (props) => {
       <MainInfoBlock>
         <TicketCardImage src={`//pics.avs.io/150/50/${carrier}.png`} width={150} height={50} alt={"Логотип авиакомпании"}/>
         <TicketCardButton>Купить <br/> за {formattedPrice}
-          {CURRENCIES_MAP[currency.type] === "rub" ? <TicketCardCurrencyBlock /> : CURRENCIES_MAP[currency.type]}
+          {!document.DOCUMENT_NODE ? <TicketCardCurrencyBlock>P</TicketCardCurrencyBlock> : CURRENCIES_MAP[currency.type]}
         </TicketCardButton>
       </MainInfoBlock>
       <AdditionalInfoBlock>
